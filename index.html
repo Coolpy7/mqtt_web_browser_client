@@ -24,7 +24,11 @@
         client.subscribe("World");
         //推送一条消息到指定主题
         message = new Paho.MQTT.Message("Hello");
+        //推送到指定主题
         message.destinationName = "World";
+        //设置qos消息质量
+        message.qos = 1;
+        //发送消息
         client.send(message);
     }
 
